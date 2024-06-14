@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <style>
+        /* Add CSS animation for fade-in effect */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: "#da373d",
+                    },
+                },
+            },
+        };
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("navbar.html")
+                .then((response) => response.text())
+                .then((data) => {
+                    document.getElementById("navbar").innerHTML = data;
+                });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="bg-gray-800 fade-in">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            <div class="relative flex h-16 items-center justify-between">
+                <div class="flex items-center justify-start">
+                    <div class="flex flex-shrink-0 items-center">
+                        <img class="h-8 w-auto" src="./L.png" alt="Your Company" />
+                    </div>
+                </div>
+                <div class="flex items-center justify-end flex-1 sm:justify-end">
+                    <div class="hidden sm:block">
+                        <div class="flex space-x-4">
+                            <!-- Active: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                            <a href="#home" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                                aria-current="page">Home</a>
+                            <a href="#education"
+                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
+                            <a href="#contact"
+                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
+                            <a href="#login"
+                                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Login</a>
+                        </div>
+                    </div>
+                    <div class="block sm:hidden">
+                        <button id="mobile-menu-button"
+                            class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                            <span class="sr-only">Open main menu</span>
+                            <svg id="menu-open-icon" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16m-7 6h7" />
+                            </svg>
+                            <svg id="menu-close-icon" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="sm:hidden hidden" id="mobile-menu">
+            <div class="space-y-1 px-2 pb-3 pt-2">
+                <!-- Active: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                <a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
+                    aria-current="page">Home</a>
+                <a href="#"
+                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
+                <a href="#"
+                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
+                <a href="#"
+                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Login</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar -->
+    <!-- Home section -->
+    <section id="home" class="m-3">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row shadow-lg p-4 rounded-md">
+                <!-- Left Column -->
+                <div class="md:w-1/2 left-col p-4">
+                    <h4 class="text-5xl font-bold mb-2 text-gray-800">Hey,</h4>
+                    <h6 class="text-4xl font-bold mb-2 text-gray-600">
+                        This is Lalbabu Yadav
+                        <span class="text-green-500">I am a Veterinarian Doctor</span>
+                    </h6>
+                </div>
+                <!-- Right Column -->
+                <div class="md:w-1/2 flex items-center justify-center p-4">
+                    <img src="https://img.freepik.com/free-photo/close-up-veterinarian-taking-care-dog_23-2149100178.jpg?size=626&ext=jpg&ga=GA1.1.260354095.1700988836&semt=sph"
+                        alt="Placeholder Image" class="rounded fade-in" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Home section -->
+    <!-- Education section -->
+    <section id="education" class="m-3">
+        <div class="education-name">
+            <h4 class="text-xl text-center font-bold mb-2 text-gray-800">
+                Education
+            </h4>
+            <div className="text-center my-1 mx-auto">
+                <div className="inline-block w-1 h-1 rounded-full bg-slate-500 ml-1"></div>
+                <div className="inline-block w-3 h-1 rounded-full bg-slate-300 ml-1"></div>
+                <div className="inline-block w-24 h-1 rounded-full bg-slate-400 ml-1"></div>
+                <div className="inline-block w-3 h-1 rounded-full bg-slate-300 ml-1"></div>
+                <div className="inline-block w-1 h-1 rounded-full bg-slate-500 ml-1"></div>
+            </div>
+        </div>
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row shadow-lg p-4 rounded-md">
+                <!-- Left Column -->
+
+                <div class="md:w-1/2 flex items-center justify-center p-4">
+                    <img src="https://img.freepik.com/free-vector/boundless-communications-make-it-easy-stay-connected-face-face-watch-videos-around-world-with-single-mobile-phone-computer_1150-37266.jpg?size=626&ext=jpg&ga=GA1.1.260354095.1700988836&semt=ais_user"
+                        alt="Placeholder Image" class="rounded-lg fade-in education-img" />
+                </div>
+                <!-- Right Column -->
+                <div class="md:w-1/2 p-4">
+                    <!-- first card -->
+                    <div class="outer m-2">
+                        <div class="dot"></div>
+                        <div class="education-card">
+                            <div class="ray"></div>
+                            <div class="text-green-400 text-md">2018-2019</div>
+                            <div class="text">10th (Matric)</div>
+                            <div>Nand Kishor High School</div>
+                            <div class="line topl"></div>
+                            <div class="line leftl"></div>
+                            <div class="line bottoml"></div>
+                            <div class="line rightl"></div>
+                        </div>
+                    </div>
+                    <!-- second card -->
+                    <div class="outer m-2">
+                        <div class="dot"></div>
+                        <div class="education-card">
+                            <div class="ray"></div>
+                            <div class="text-green-400 text-md">2019-2021</div>
+                            <div class="text">12th (I.A.)</div>
+                            <div>Nand Kishor High School</div>
+                            <div class="line topl"></div>
+                            <div class="line leftl"></div>
+                            <div class="line bottoml"></div>
+                            <div class="line rightl"></div>
+                        </div>
+                    </div>
+                    <!-- third card -->
+                    <div class="outer m-2">
+                        <div class="dot"></div>
+                        <div class="education-card">
+                            <div class="ray"></div>
+                            <div class="text-green-400 text-md">2021-2024</div>
+                            <div class="text">B.A. (Hons) in Political Science</div>
+                            <div>JK College supaul</div>
+                            <div class="line topl"></div>
+                            <div class="line leftl"></div>
+                            <div class="line bottoml"></div>
+                            <div class="line rightl"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- Education section -->
+    <!-- Training section -->
+    <div class="container mx-auto" >
+        <div class="flex flex-col md:flex-row shadow-lg p-4 rounded-md">
+            <div class="md:w-1/2 flex items-center justify-center p-4">
+                <div class="training-card">
+                    <div class="training-subcard">
+
+                        <h6 class="">@2024</h6>
+                        <h2 class="">A.I. Training</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex items-center justify-center p-4">
+                <img src="https://img.freepik.com/free-vector/seminar-concept-illustration_114360-7480.jpg?t=st=1718390011~exp=1718393611~hmac=b08117553bb08732dfc88585672c13dc206f60e01bece460632b445645f51aac&w=996"
+                    alt="Placeholder Image" class="rounded-lg fade-in education-img" />
+            </div>
+        </div>
+    </div>
+    <!-- Training section -->
+    <!-- contact section -->
+    <div class="contact-container" id="contact">
+        <div class="left-col left-col-img">
+            <img src="https://img.freepik.com/free-vector/customer-support-flat-illustration_23-2148889375.jpg?t=st=1717412622~exp=1717416222~hmac=91104101a007491cedacc09b834838535f8b178b972b2b473ba012c18e4868bc&w=740"
+                alt="Contact Form" style="max-height: 450px;">
+        </div>
+        <div class="right-col p-4">
+            <h1 class="text-zinc-800 text-xl font-bold">Contact Us</h1>
+            <p id="errorMessage" class="errorMessage"></p>
+            <p id="successMessage" class="successMessage"></p>
+            <form id="contactForm">
+                <div class="formInput">
+                    <label>Name</label>
+                    <input id="name" type="text" required>
+                    <p id="nameError" class="text-red-500"></p>
+                </div>
+                <div class="formInput">
+                    <label>Email</label>
+                    <input id="email" type="email" required>
+                    <p id="emailError" class="text-red-500"></p>
+                </div>
+                <div class="formInput">
+                    <label>Message</label>
+                    <textarea id="message" rows="5" required></textarea>
+                    <p id="messageError" class="text-red-500"></p>
+                </div>
+                <button id="submitButton" class="button-29" type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+    <!-- contact section -->
+    <!-- Footer -->
+    <footer>
+        <div class="container  bg-gray-50 footer">
+            <div class="col-1">
+                <img class="footer-logo" src="./L.png" alt="footer-logo">
+            </div>
+            <div class="col-1">
+                <h5 class="text-white text-md ">Links</h5>
+                <div class="footer-links">
+                    <a href="#home" class="text-amber-100">Home</a>
+                    <a href="#about" class="text-amber-100">About</a>
+                    <a href="#contact" class="text-amber-100">Contact</a>
+                    <a href="#contact" class="text-amber-100">Login</a>
+                </div>
+            </div>
+            <div class="col-1">
+                <h6 class="text-white">Contact us</h6>
+
+                <div class="footer-contact">
+                    <div class="footer-contact-icon">Patna, Bihar</div>
+                    <div class="footer-contact-icon" onclick="handlePhoneClick()"> +91 75202-60421</div>
+                    <div class="footer-contact-icon" onclick="handleWhatsappClick()"> +91 75202-60421</div>
+                    <div class="footer-contact-icon" onclick="handleEmailClick()"> lalbabu7520@gmail.com</div>
+                </div>
+            </div>
+        </div>
+        <div class="text-amber-200 text-center bg-gray-700 p-3" >
+            <a class="text-amber-200" href="https://bhupeshb7portfolio.vercel.appd/">Lalbabu Kumar &nbsp;</a>
+            <span>© 2024 &nbsp;</span>
+          </div>
+    </footer>
+    <!-- Footer -->
+    <!-- Script section -->
+    <script>
+        document
+            .getElementById("mobile-menu-button")
+            .addEventListener("click", function () {
+                var menu = document.getElementById("mobile-menu");
+                menu.classList.toggle("hidden");
+
+                var openIcon = document.getElementById("menu-open-icon");
+                var closeIcon = document.getElementById("menu-close-icon");
+                openIcon.classList.toggle("hidden");
+                closeIcon.classList.toggle("hidden");
+            });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const apiUrl = "your_api_url_here";
+
+            const showError = (element, message) => {
+                const errorElement = document.getElementById(element + "Error");
+                errorElement.textContent = message;
+            };
+
+            const clearErrors = () => {
+                const errorElements = document.querySelectorAll(".text-red-500");
+                errorElements.forEach(element => {
+                    element.textContent = "";
+                });
+            };
+
+            const showSuccessMessage = (message) => {
+                const successMessage = document.getElementById("successMessage");
+                successMessage.textContent = message;
+                setTimeout(() => {
+                    successMessage.textContent = "";
+                }, 5000);
+            };
+
+            const showErrorMessage = (message) => {
+                const errorMessage = document.getElementById("errorMessage");
+                errorMessage.textContent = message;
+                setTimeout(() => {
+                    errorMessage.textContent = "";
+                }, 5000);
+            };
+
+            const handleSubmit = async (event) => {
+                event.preventDefault();
+                clearErrors();
+                const name = document.getElementById("name").value;
+                const email = document.getElementById("email").value;
+                const message = document.getElementById("message").value;
+                const data = { name, email, message };
+                try {
+                    const response = await fetch(`${apiUrl}/api/send-email`, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(data)
+                    });
+                    if (!response.ok) {
+                        throw new Error("Failed to send message.");
+                    }
+                    showSuccessMessage("Message sent successfully!");
+                    document.getElementById("contactForm").reset();
+                } catch (error) {
+                    showErrorMessage("Failed to send message. Due to Technical Errors, Try after some time");
+                }
+            };
+
+            document.getElementById("contactForm").addEventListener("submit", handleSubmit);
+        });
+    </script>
+    <script>
+        function handleEmailClick() {
+          window.location.href = "mailto:lalbabu7520@gmail.com";
+        }
+      
+        function handlePhoneClick() {
+          window.location.href = "tel:+917520260421";
+        }
+      
+        function handleWhatsappClick() {
+          window.location.href = "https://wa.me/917520260421";
+        }
+      </script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
