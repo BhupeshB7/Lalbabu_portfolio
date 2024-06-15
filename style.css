@@ -305,26 +305,3 @@ form .formInput {
     box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
   }
 /* contact-container */
-/* footer */
-.footer{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    gap: 30px;
-    background: rgb(31 41 55) !important;
-    padding: 10px;
-}
-.footer-logo{
-    height: 60px;
-    width: 60px;
-    object-fit: cover;
-  mix-blend-mode: luminosity;
-  }
-  .footer-links ,.footer-contact-icon{
-    display: flex;
-    flex-direction: column;
-    color: #eaffdd !important;
-  }
